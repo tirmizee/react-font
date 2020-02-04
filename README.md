@@ -66,3 +66,19 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### External Libs
+
+npm install prop-types --save
+
+npm install bootstrap --save
+
+npm install react-router-dom --save
+
+npm install axios --save
+
+npm install --save reactstrap
+
+npm install --save react-bootstrap-table-next
+
+npm install --save react-bootstrap-table2-paginator
