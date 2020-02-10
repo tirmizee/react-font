@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 export default class Menu extends Component {
 
@@ -10,7 +11,7 @@ export default class Menu extends Component {
                     {/* Sidebar user panel */}
                     <div className="user-panel">
                         <div className="pull-left image">
-                            <img src="dist/img/user2-160x160.jpg" className="img-circle" alt="User" />
+                            <img src="/dist/img/user2-160x160.jpg" className="img-circle" alt="User" />
                         </div>
                         <div className="pull-left info">
                             <p>Alexander Pierce</p>
@@ -40,8 +41,7 @@ export default class Menu extends Component {
                                 </span>
                             </a>
                             <ul className="treeview-menu">
-                                <li><a href="index.html"><i className="fa fa-circle-o" /> Dashboard v1</a></li>
-                                <li className="active"><a href="index2.html"><i className="fa fa-circle-o" /> Dashboard v2</a></li>
+                                <li className="active"><Link to="/dashboard"><i className="fa fa-circle-o" /> Dashboard</Link></li>
                             </ul>
                         </li>
                         <li className="treeview">
@@ -60,12 +60,12 @@ export default class Menu extends Component {
                             </ul>
                         </li>
                         <li>
-                            <a href="pages/widgets.html">
+                            <Link to="/pages/widget">
                                 <i className="fa fa-th" /> <span>Widgets</span>
                                 <span className="pull-right-container">
                                     <small className="label pull-right bg-green">new</small>
                                 </span>
-                            </a>
+                            </Link>
                         </li>
                         <li className="treeview">
                             <a href="fake_url">
