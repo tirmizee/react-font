@@ -145,7 +145,8 @@ export default class Menu extends Component {
                         </li>
                         <li className="treeview">
                             <a href="fake_url">
-                                <i className="fa fa-folder" /> <span>Examples</span>
+                                <i className="fa fa-folder" />
+                                <span>Examples</span>
                                 <span className="pull-right-container">
                                     <i className="fa fa-angle-left pull-right" />
                                 </span>
@@ -164,7 +165,8 @@ export default class Menu extends Component {
                         </li>
                         <li className="treeview">
                             <a href="fake_url">
-                                <i className="fa fa-share" /> <span>Multilevel</span>
+                                <i className="fa fa-share" />
+                                <span>Multilevel</span>
                                 <span className="pull-right-container">
                                     <i className="fa fa-angle-left pull-right" />
                                 </span>
@@ -172,16 +174,18 @@ export default class Menu extends Component {
                             <ul className="treeview-menu">
                                 <li><a href="fake_url"><i className="fa fa-circle-o" /> Level One</a></li>
                                 <li className="treeview">
-                                    <a href="fake_url"><i className="fa fa-circle-o" /> Level One
-                            <span className="pull-right-container">
+                                    <a href="fake_url"><i className="fa fa-circle-o" />
+                                        Level One
+                                        <span className="pull-right-container">
                                             <i className="fa fa-angle-left pull-right" />
                                         </span>
                                     </a>
                                     <ul className="treeview-menu">
                                         <li><a href="fake_url"><i className="fa fa-circle-o" /> Level Two</a></li>
                                         <li className="treeview">
-                                            <a href="fake_url"><i className="fa fa-circle-o" /> Level Two
-                                <span className="pull-right-container">
+                                            <a href="fake_url"><i className="fa fa-circle-o" /> 
+                                            Level Two
+                                                <span className="pull-right-container">
                                                     <i className="fa fa-angle-left pull-right" />
                                                 </span>
                                             </a>
