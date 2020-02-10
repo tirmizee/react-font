@@ -19,6 +19,8 @@ import Modal from '../../views/pages/ui/Modal'
 import GeneralForm from '../../views/pages/forms/GeneralForm'
 import AdvancedForm from '../../views/pages/forms/AdvancedForm'
 import EditorForm from '../../views/pages/forms/EditorForm'
+import Calendar from '../../views/pages/Calendar'
+import Mailbox from '../../views/pages/Mailbox'
 
 export default class Content extends Component {
 
@@ -28,6 +30,7 @@ export default class Content extends Component {
                 <Route exact path={"/"} component={DashBoard} />
                 <Route exact path={"/dashboard"} component={DashBoard} />
                 <Route exact path={"/pages/widget"} component={Widget} />
+                <Route exact path={"/pages/calendar"} component={Calendar} />
                 <Route exact path={"/pages/layout/topnav"} component={TopNav} />
                 <Route exact path={"/pages/layout/fixed"} component={Fixed} />
                 <Route exact path={"/pages/layout/boxed"} component={Boxed} />
@@ -45,8 +48,8 @@ export default class Content extends Component {
                 <Route exact path={"/pages/forms/general"} component={GeneralForm} />
                 <Route exact path={"/pages/forms/advanced"} component={AdvancedForm} />
                 <Route exact path={"/pages/forms/editors"} component={EditorForm} />
+                <Route exact path={"/pages/mailbox/mailbox"} component={Mailbox} />
             </Switch>
         )
     }
-
 }
