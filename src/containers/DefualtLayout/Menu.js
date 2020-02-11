@@ -1,11 +1,30 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default class Menu extends Component {
 
     constructor(props) {
         super(props);
-      }
+        this.state = {
+            currentPath: ""
+        }
+        this.activeMenu = this.activeMenu.bind(this);
+        this.activeClass = this.activeClass.bind(this);
+    }
+
+    componentWillUpdate = (nextProps, nextState) => {
+    }
+
+    activeMenu = (path) => {
+        this.setState({ currentPath: path });
+    }
+
+    activeClass = (...paths) => {
+        console.log(this.state.currentPath);
+        for (const path of paths) {
+            if (path === this.state.currentPath) return "active"
+        }
+    }
 
     render() {
         return (
@@ -37,7 +56,7 @@ export default class Menu extends Component {
                     {/* sidebar menu: : style can be found in sidebar.less */}
                     <ul className="sidebar-menu" data-widget="tree">
                         <li className="header">MAIN NAVIGATION</li>
-                        <li className={"active treeview menu-open"}>
+                        <li className={`${this.activeClass("","/", "/dashboard")} treeview menu-open`}>
                             <a href="fake_url">
                                 <i className="fa fa-dashboard" /> <span>Dashboard</span>
                                 <span className="pull-right-container">
@@ -45,10 +64,12 @@ export default class Menu extends Component {
                                 </span>
                             </a>
                             <ul className="treeview-menu">
-                                <li className="active"><Link to="/dashboard"><i className="fa fa-circle-o" /> Dashboard</Link></li>
+                                <li className={this.activeClass("/dashboard")} onClick={(e) => { this.activeMenu("/dashboard") }}>
+                                    <Link to="/dashboard"><i className="fa fa-circle-o" /> Dashboard</Link>
+                                </li>
                             </ul>
                         </li>
-                        <li className="treeview">
+                        <li className={`${this.activeClass("/pages/layout/topnav","/pages/layout/boxed", "/pages/layout/fixed","/pages/layout/collapsedsidebar")} treeview`}>
                             <a href="fake_url">
                                 <i className="fa fa-files-o" />
                                 <span>Layout Options</span>
@@ -57,19 +78,19 @@ export default class Menu extends Component {
                                 </span>
                             </a>
                             <ul className="treeview-menu">
-                                <li><a href="/pages/layout/topnav"><i className="fa fa-circle-o" /> Top Navigation</a></li>
-                                <li><a href="/pages/layout/boxed"><i className="fa fa-circle-o" /> Boxed</a></li>
-                                <li><a href="/pages/layout/fixed"><i className="fa fa-circle-o" /> Fixed</a></li>
-                                <li><a href="/pages/layout/collapsed-sidebar"><i className="fa fa-circle-o" /> Collapsed Sidebar</a></li>
+                                <li className={this.activeClass("/pages/layout/topnav")} onClick={(e) => { this.activeMenu("/pages/layout/topnav") }}><Link to="/pages/layout/topnav"><i className="fa fa-circle-o" /> Top Navigation</Link></li>
+                                <li className={this.activeClass("/pages/layout/boxed")} onClick={(e) => { this.activeMenu("/pages/layout/boxed") }}><Link to="/pages/layout/boxed"><i className="fa fa-circle-o" /> Boxed</Link></li>
+                                <li className={this.activeClass("/pages/layout/fixed")} onClick={(e) => { this.activeMenu("/pages/layout/fixed") }}><Link to="/pages/layout/fixed"><i className="fa fa-circle-o" /> Fixed</Link></li>
+                                <li className={this.activeClass("/pages/layout/collapsedsidebar")} onClick={(e) => { this.activeMenu("/pages/layout/collapsedsidebar") }}><Link to="/pages/layout/collapsedsidebar"><i className="fa fa-circle-o" /> Collapsed Sidebar</Link></li>
                             </ul>
                         </li>
-                        <li>
-                            <Link to="/pages/widget">
+                        <li className={this.activeClass("/pages/widget")}>
+                            <NavLink to="/pages/widget" onClick={(e) => { this.activeMenu("/pages/widget") }}>
                                 <i className="fa fa-th" /> <span>Widgets</span>
                                 <span className="pull-right-container">
                                     <small className="label pull-right bg-green">new</small>
                                 </span>
-                            </Link>
+                            </NavLink >
                         </li>
                         <li className="treeview">
                             <a href="fake_url">
@@ -187,8 +208,8 @@ export default class Menu extends Component {
                                     <ul className="treeview-menu">
                                         <li><a href="fake_url"><i className="fa fa-circle-o" /> Level Two</a></li>
                                         <li className="treeview">
-                                            <a href="fake_url"><i className="fa fa-circle-o" /> 
-                                            Level Two
+                                            <a href="fake_url"><i className="fa fa-circle-o" />
+                                                Level Two
                                                 <span className="pull-right-container">
                                                     <i className="fa fa-angle-left pull-right" />
                                                 </span>
