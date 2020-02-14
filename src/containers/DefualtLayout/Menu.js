@@ -30,7 +30,7 @@ export default class Menu extends Component {
                         </div>
                         <div className="pull-left info">
                             <p>Alexander Pierce</p>
-                            <a href="fake_url"><i className="fa fa-circle text-success" /> Online</a>
+                            <a href="#"><i className="fa fa-circle text-success" /> Online</a>
                         </div>
                     </div>
                     {/* search form */}
@@ -49,7 +49,7 @@ export default class Menu extends Component {
                     <ul className="sidebar-menu" data-widget="tree">
                         <li className="header">MAIN NAVIGATION</li>
                         <li className={`${this.activeClass("", "/", "/dashboard")} treeview menu-open`}>
-                            <a href="fake_url">
+                            <a href="#">
                                 <i className="fa fa-dashboard" /> <span>Dashboard</span>
                                 <span className="pull-right-container">
                                     <i className="fa fa-angle-left pull-right" />
@@ -62,7 +62,7 @@ export default class Menu extends Component {
                             </ul>
                         </li>
                         <li className={`${this.activeClass("/pages/layout/topnav", "/pages/layout/boxed", "/pages/layout/fixed", "/pages/layout/collapsedsidebar")} treeview`}>
-                            <a href="fake_url">
+                            <a href="#">
                                 <i className="fa fa-files-o" />
                                 <span>Layout Options</span>
                                 <span className="pull-right-container">
@@ -77,7 +77,7 @@ export default class Menu extends Component {
                             </ul>
                         </li>
                         <li className={this.activeClass("/pages/widget")}>
-                            <NavLink to="/pages/widget" onClick={(e) => { this.activeMenu("/pages/widget") }}>
+                            <NavLink to="/pages/widget">
                                 <i className="fa fa-th" /> <span>Widgets</span>
                                 <span className="pull-right-container">
                                     <small className="label pull-right bg-green">new</small>
@@ -85,7 +85,7 @@ export default class Menu extends Component {
                             </NavLink >
                         </li>
                         <li className={`${this.activeClass("/pages/charts/chartjs", "/pages/charts/morris", "/pages/charts/flot", "/pages/charts/inline")} treeview`}>
-                            <a href="fake_url">
+                            <a href="#">
                                 <i className="fa fa-pie-chart" />
                                 <span>Charts</span>
                                 <span className="pull-right-container">
@@ -100,7 +100,7 @@ export default class Menu extends Component {
                             </ul>
                         </li>
                         <li className={`${this.activeClass("/pages/ui/general", "/pages/ui/icons", "/pages/ui/buttons", "/pages/ui/sliders", "/pages/ui/timeline", "/pages/ui/modals")} treeview`}>
-                            <a href="fake_url">
+                            <a href="#">
                                 <i className="fa fa-laptop" />
                                 <span>UI Elements</span>
                                 <span className="pull-right-container">
@@ -117,7 +117,7 @@ export default class Menu extends Component {
                             </ul>
                         </li>
                         <li className={`${this.activeClass("/pages/forms/general","/pages/forms/advanced","/pages/forms/editors")} treeview`}>
-                            <a href="fake_url">
+                            <a href="#">
                                 <i className="fa fa-edit" /> <span>Forms</span>
                                 <span className="pull-right-container">
                                     <i className="fa fa-angle-left pull-right" />
@@ -130,7 +130,7 @@ export default class Menu extends Component {
                             </ul>
                         </li>
                         <li className={`${this.activeClass("/pages/tables/simple", "/pages/tables/data")} treeview`}>
-                            <a href="fake_url">
+                            <a href="#">
                                 <i className="fa fa-table" /> <span>Tables</span>
                                 <span className="pull-right-container">
                                     <i className="fa fa-angle-left pull-right" />
@@ -141,47 +141,27 @@ export default class Menu extends Component {
                                 <li className={this.activeClass("/pages/tables/data")}><Link to="/pages/tables/data"><i className="fa fa-circle-o" /> Data tables</Link></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="/pages/calendar">
+                        <li className={this.activeClass("/pages/calendar")}>
+                            <Link to="/pages/calendar">
                                 <i className="fa fa-calendar" /> <span>Calendar</span>
                                 <span className="pull-right-container">
                                     <small className="label pull-right bg-red">3</small>
                                     <small className="label pull-right bg-blue">17</small>
                                 </span>
-                            </a>
+                            </Link>
                         </li>
-                        <li>
-                            <a href="/pages/mailbox/mailbox">
+                        <li className={this.activeClass("/pages/mailbox/mailbox")}>
+                            <Link to="/pages/mailbox/mailbox">
                                 <i className="fa fa-envelope" /> <span>Mailbox</span>
                                 <span className="pull-right-container">
                                     <small className="label pull-right bg-yellow">12</small>
                                     <small className="label pull-right bg-green">16</small>
                                     <small className="label pull-right bg-red">5</small>
                                 </span>
-                            </a>
+                            </Link>
                         </li>
                         <li className={`treeview`}>
-                            <a href="fake_url">
-                                <i className="fa fa-folder" />
-                                <span>Examples</span>
-                                <span className="pull-right-container">
-                                    <i className="fa fa-angle-left pull-right" />
-                                </span>
-                            </a>
-                            <ul className="treeview-menu">
-                                <li><a href="/pages/examples/invoice"><i className="fa fa-circle-o" /> Invoice</a></li>
-                                <li><a href="/pages/examples/profile"><i className="fa fa-circle-o" /> Profile</a></li>
-                                <li><a href="/pages/examples/login"><i className="fa fa-circle-o" /> Login</a></li>
-                                <li><a href="/pages/examples/register"><i className="fa fa-circle-o" /> Register</a></li>
-                                <li><a href="/pages/examples/lockscreen"><i className="fa fa-circle-o" /> Lockscreen</a></li>
-                                <li><a href="/pages/examples/404"><i className="fa fa-circle-o" /> 404 Error</a></li>
-                                <li><a href="/pages/examples/500"><i className="fa fa-circle-o" /> 500 Error</a></li>
-                                <li><a href="/pages/examples/blank"><i className="fa fa-circle-o" /> Blank Page</a></li>
-                                <li><a href="/pages/examples/pace"><i className="fa fa-circle-o" /> Pace Page</a></li>
-                            </ul>
-                        </li>
-                        <li className={`treeview`}>
-                            <a href="fake_url">
+                            <a href="#">
                                 <i className="fa fa-share" />
                                 <span>Multilevel</span>
                                 <span className="pull-right-container">
@@ -189,38 +169,38 @@ export default class Menu extends Component {
                                 </span>
                             </a>
                             <ul className="treeview-menu">
-                                <li><a href="fake_url"><i className="fa fa-circle-o" /> Level One</a></li>
+                                <li><Link to="#"><i className="fa fa-circle-o" /> Level One</Link></li>
                                 <li className={`treeview`}>
-                                    <a href="fake_url"><i className="fa fa-circle-o" />
+                                    <Link to="#"><i className="fa fa-circle-o" />
                                         Level One
                                         <span className="pull-right-container">
                                             <i className="fa fa-angle-left pull-right" />
                                         </span>
-                                    </a>
+                                    </Link>
                                     <ul className="treeview-menu">
-                                        <li><a href="fake_url"><i className="fa fa-circle-o" /> Level Two</a></li>
+                                        <li><Link to="#"><i className="fa fa-circle-o" /> Level Two</Link></li>
                                         <li className={`treeview`}>
-                                            <a href="fake_url"><i className="fa fa-circle-o" />
+                                            <Link to="#"><i className="fa fa-circle-o" />
                                                 Level Two
                                                 <span className="pull-right-container">
                                                     <i className="fa fa-angle-left pull-right" />
                                                 </span>
-                                            </a>
+                                            </Link>
                                             <ul className="treeview-menu">
-                                                <li><a href="fake_url"><i className="fa fa-circle-o" /> Level Three</a></li>
-                                                <li><a href="fake_url"><i className="fa fa-circle-o" /> Level Three</a></li>
+                                                <li><Link to="#"><i className="fa fa-circle-o" /> Level Three</Link></li>
+                                                <li><Link to="#"><i className="fa fa-circle-o" /> Level Three</Link></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="fake_url"><i className="fa fa-circle-o" /> Level One</a></li>
+                                <li><Link to="#"><i className="fa fa-circle-o" /> Level One</Link></li>
                             </ul>
                         </li>
                         <li><a to="https://adminlte.io/docs"><i className="fa fa-book" /> <span>Documentation</span></a></li>
                         <li className="header">LABELS</li>
-                        <li><a href="fake_url"><i className="fa fa-circle-o text-red" /> <span>Important</span></a></li>
-                        <li><a href="fake_url"><i className="fa fa-circle-o text-yellow" /> <span>Warning</span></a></li>
-                        <li><a href="fake_url"><i className="fa fa-circle-o text-aqua" /> <span>Information</span></a></li>
+                        <li><a href="#"><i className="fa fa-circle-o text-red" /> <span>Important</span></a></li>
+                        <li><a href="#"><i className="fa fa-circle-o text-yellow" /> <span>Warning</span></a></li>
+                        <li><a href="#"><i className="fa fa-circle-o text-aqua" /> <span>Information</span></a></li>
                     </ul>
                 </section>
                 {/* /.sidebar */}
