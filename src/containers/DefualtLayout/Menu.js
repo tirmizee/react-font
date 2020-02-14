@@ -15,12 +15,16 @@ export default class Menu extends Component {
     componentWillUpdate = (nextProps, nextState) => {
     }
 
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps.location);
+        console.log(this.props.location);
+    }
+
     activeMenu = (path) => {
         this.setState({ currentPath: path });
     }
 
     activeClass = (...paths) => {
-        console.log(this.state.currentPath);
         for (const path of paths) {
             if (path === this.state.currentPath) return "active"
         }
@@ -56,7 +60,7 @@ export default class Menu extends Component {
                     {/* sidebar menu: : style can be found in sidebar.less */}
                     <ul className="sidebar-menu" data-widget="tree">
                         <li className="header">MAIN NAVIGATION</li>
-                        <li className={`${this.activeClass("","/", "/dashboard")} treeview menu-open`}>
+                        <li className={`${this.activeClass("", "/", "/dashboard")} treeview menu-open`}>
                             <a href="fake_url">
                                 <i className="fa fa-dashboard" /> <span>Dashboard</span>
                                 <span className="pull-right-container">
@@ -69,7 +73,7 @@ export default class Menu extends Component {
                                 </li>
                             </ul>
                         </li>
-                        <li className={`${this.activeClass("/pages/layout/topnav","/pages/layout/boxed", "/pages/layout/fixed","/pages/layout/collapsedsidebar")} treeview`}>
+                        <li className={`${this.activeClass("/pages/layout/topnav", "/pages/layout/boxed", "/pages/layout/fixed", "/pages/layout/collapsedsidebar")} treeview`}>
                             <a href="fake_url">
                                 <i className="fa fa-files-o" />
                                 <span>Layout Options</span>
@@ -92,7 +96,7 @@ export default class Menu extends Component {
                                 </span>
                             </NavLink >
                         </li>
-                        <li className={`${this.activeClass("/pages/charts/chartjs","/pages/charts/morris", "/pages/charts/flot","/pages/charts/inline")} treeview`}>
+                        <li className={`${this.activeClass("/pages/charts/chartjs", "/pages/charts/morris", "/pages/charts/flot", "/pages/charts/inline")} treeview`}>
                             <a href="fake_url">
                                 <i className="fa fa-pie-chart" />
                                 <span>Charts</span>
@@ -107,7 +111,7 @@ export default class Menu extends Component {
                                 <li className={this.activeClass("/pages/charts/inline")} onClick={(e) => { this.activeMenu("/pages/charts/inline") }}><Link to="/pages/charts/inline"><i className="fa fa-circle-o" /> Inline charts</Link></li>
                             </ul>
                         </li>
-                        <li className={`${this.activeClass("/pages/ui/general","/pages/ui/icons", "/pages/ui/buttons","/pages/ui/sliders","/pages/ui/timeline","/pages/ui/modals")} treeview`}>
+                        <li className={`${this.activeClass("/pages/ui/general", "/pages/ui/icons", "/pages/ui/buttons", "/pages/ui/sliders", "/pages/ui/timeline", "/pages/ui/modals")} treeview`}>
                             <a href="fake_url">
                                 <i className="fa fa-laptop" />
                                 <span>UI Elements</span>
