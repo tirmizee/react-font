@@ -5,20 +5,12 @@ export default class Menu extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            currentPath: ""
-        }
-        this.activeMenu = this.activeMenu.bind(this);
         this.activeClass = this.activeClass.bind(this);
     }
 
     componentDidMount = () => {
         console.log("Menu : " + JSON.stringify(this.props.location));
     };
-
-    activeMenu = (path) => {
-        this.setState({ currentPath: path });
-    }
 
     activeClass = (...paths) => {
         for (const path of paths) {
@@ -124,7 +116,7 @@ export default class Menu extends Component {
                                 <li className={this.activeClass("/pages/ui/modals")}><Link to="/pages/ui/modals"><i className="fa fa-circle-o" /> Modals</Link></li>
                             </ul>
                         </li>
-                        <li className="treeview">
+                        <li className={`${this.activeClass("/pages/forms/general","/pages/forms/advanced","/pages/forms/editors")} treeview`}>
                             <a href="fake_url">
                                 <i className="fa fa-edit" /> <span>Forms</span>
                                 <span className="pull-right-container">
@@ -132,12 +124,12 @@ export default class Menu extends Component {
                                 </span>
                             </a>
                             <ul className="treeview-menu">
-                                <li><a href="/pages/forms/general"><i className="fa fa-circle-o" /> General Elements</a></li>
-                                <li><a href="/pages/forms/advanced"><i className="fa fa-circle-o" /> Advanced Elements</a></li>
-                                <li><a href="/pages/forms/editors"><i className="fa fa-circle-o" /> Editors</a></li>
+                                <li className={this.activeClass("/pages/forms/general")}><Link to="/pages/forms/general"><i className="fa fa-circle-o" /> General Elements</Link></li>
+                                <li className={this.activeClass("/pages/forms/advanced")}><Link to="/pages/forms/advanced"><i className="fa fa-circle-o" /> Advanced Elements</Link></li>
+                                <li className={this.activeClass("/pages/forms/editors")}><Link to="/pages/forms/editors"><i className="fa fa-circle-o" /> Editors</Link></li>
                             </ul>
                         </li>
-                        <li className="treeview">
+                        <li className={`${this.activeClass("/pages/tables/simple", "/pages/tables/data")} treeview`}>
                             <a href="fake_url">
                                 <i className="fa fa-table" /> <span>Tables</span>
                                 <span className="pull-right-container">
@@ -145,8 +137,8 @@ export default class Menu extends Component {
                                 </span>
                             </a>
                             <ul className="treeview-menu">
-                                <li><a href="/pages/tables/simple"><i className="fa fa-circle-o" /> Simple tables</a></li>
-                                <li><a href="/pages/tables/data"><i className="fa fa-circle-o" /> Data tables</a></li>
+                                <li className={this.activeClass("/pages/tables/simple")}><Link to="/pages/tables/simple"><i className="fa fa-circle-o" /> Simple tables</Link></li>
+                                <li className={this.activeClass("/pages/tables/data")}><Link to="/pages/tables/data"><i className="fa fa-circle-o" /> Data tables</Link></li>
                             </ul>
                         </li>
                         <li>
@@ -168,7 +160,7 @@ export default class Menu extends Component {
                                 </span>
                             </a>
                         </li>
-                        <li className="treeview">
+                        <li className={`treeview`}>
                             <a href="fake_url">
                                 <i className="fa fa-folder" />
                                 <span>Examples</span>
@@ -188,7 +180,7 @@ export default class Menu extends Component {
                                 <li><a href="/pages/examples/pace"><i className="fa fa-circle-o" /> Pace Page</a></li>
                             </ul>
                         </li>
-                        <li className="treeview">
+                        <li className={`treeview`}>
                             <a href="fake_url">
                                 <i className="fa fa-share" />
                                 <span>Multilevel</span>
@@ -198,7 +190,7 @@ export default class Menu extends Component {
                             </a>
                             <ul className="treeview-menu">
                                 <li><a href="fake_url"><i className="fa fa-circle-o" /> Level One</a></li>
-                                <li className="treeview">
+                                <li className={`treeview`}>
                                     <a href="fake_url"><i className="fa fa-circle-o" />
                                         Level One
                                         <span className="pull-right-container">
@@ -207,7 +199,7 @@ export default class Menu extends Component {
                                     </a>
                                     <ul className="treeview-menu">
                                         <li><a href="fake_url"><i className="fa fa-circle-o" /> Level Two</a></li>
-                                        <li className="treeview">
+                                        <li className={`treeview`}>
                                             <a href="fake_url"><i className="fa fa-circle-o" />
                                                 Level Two
                                                 <span className="pull-right-container">

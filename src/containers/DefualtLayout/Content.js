@@ -21,6 +21,8 @@ import AdvancedForm from '../../views/pages/forms/AdvancedForm'
 import EditorForm from '../../views/pages/forms/EditorForm'
 import Calendar from '../../views/pages/Calendar'
 import Mailbox from '../../views/pages/Mailbox'
+import SimpleTable from '../../views/pages/tables/SimpleTable'
+import DataTable from '../../views/pages/tables/DataTable'
 
 export default class Content extends Component {
 
@@ -49,6 +51,8 @@ export default class Content extends Component {
                 <Route exact path={"/pages/forms/advanced"} component={AdvancedForm} />
                 <Route exact path={"/pages/forms/editors"} component={EditorForm} />
                 <Route exact path={"/pages/mailbox/mailbox"} component={Mailbox} />
+                <Route exact path={"/pages/tables/simple"} component={SimpleTable} />
+                <Route exact path={"/pages/tables/data"} component={DataTable} />
             </Switch>
         )
     }
