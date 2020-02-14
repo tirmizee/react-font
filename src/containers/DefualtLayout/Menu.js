@@ -107,7 +107,7 @@ export default class Menu extends Component {
                                 <li className={this.activeClass("/pages/charts/inline")} onClick={(e) => { this.activeMenu("/pages/charts/inline") }}><Link to="/pages/charts/inline"><i className="fa fa-circle-o" /> Inline charts</Link></li>
                             </ul>
                         </li>
-                        <li className="treeview">
+                        <li className={`${this.activeClass("/pages/ui/general","/pages/ui/icons", "/pages/ui/buttons","/pages/ui/sliders","/pages/ui/timeline","/pages/ui/modals")} treeview`}>
                             <a href="fake_url">
                                 <i className="fa fa-laptop" />
                                 <span>UI Elements</span>
@@ -116,12 +116,12 @@ export default class Menu extends Component {
                                 </span>
                             </a>
                             <ul className="treeview-menu">
-                                <li><a href="/pages/ui/general"><i className="fa fa-circle-o" /> General</a></li>
-                                <li><a href="/pages/ui/icons"><i className="fa fa-circle-o" /> Icons</a></li>
-                                <li><a href="/pages/ui/buttons"><i className="fa fa-circle-o" /> Buttons</a></li>
-                                <li><a href="/pages/ui/sliders"><i className="fa fa-circle-o" /> Sliders</a></li>
-                                <li><a href="/pages/ui/timeline"><i className="fa fa-circle-o" /> Timeline</a></li>
-                                <li><a href="/pages/ui/modals"><i className="fa fa-circle-o" /> Modals</a></li>
+                                <li className={this.activeClass("/pages/ui/general")} onClick={(e) => { this.activeMenu("/pages/ui/general") }}><Link to="/pages/ui/general"><i className="fa fa-circle-o" /> General</Link></li>
+                                <li className={this.activeClass("/pages/ui/icons")} onClick={(e) => { this.activeMenu("/pages/ui/icons") }}><Link to="/pages/ui/icons"><i className="fa fa-circle-o" /> Icons</Link></li>
+                                <li className={this.activeClass("/pages/ui/buttons")} onClick={(e) => { this.activeMenu("/pages/ui/buttons") }}><Link to="/pages/ui/buttons"><i className="fa fa-circle-o" /> Buttons</Link></li>
+                                <li className={this.activeClass("/pages/ui/sliders")} onClick={(e) => { this.activeMenu("/pages/ui/sliders") }}><Link to="/pages/ui/sliders"><i className="fa fa-circle-o" /> Sliders</Link></li>
+                                <li className={this.activeClass("/pages/ui/timeline")} onClick={(e) => { this.activeMenu("/pages/ui/timeline") }}><Link to="/pages/ui/timeline"><i className="fa fa-circle-o" /> Timeline</Link></li>
+                                <li className={this.activeClass("/pages/ui/modals")} onClick={(e) => { this.activeMenu("/pages/ui/modals") }}><Link to="/pages/ui/modals"><i className="fa fa-circle-o" /> Modals</Link></li>
                             </ul>
                         </li>
                         <li className="treeview">
