@@ -92,7 +92,7 @@ export default class Menu extends Component {
                                 </span>
                             </NavLink >
                         </li>
-                        <li className="treeview">
+                        <li className={`${this.activeClass("/pages/charts/chartjs","/pages/charts/morris", "/pages/charts/flot","/pages/charts/inline")} treeview`}>
                             <a href="fake_url">
                                 <i className="fa fa-pie-chart" />
                                 <span>Charts</span>
@@ -101,10 +101,10 @@ export default class Menu extends Component {
                                 </span>
                             </a>
                             <ul className="treeview-menu">
-                                <li><a href="/pages/charts/chartjs"><i className="fa fa-circle-o" /> ChartJS</a></li>
-                                <li><a href="/pages/charts/morris"><i className="fa fa-circle-o" /> Morris</a></li>
-                                <li><a href="/pages/charts/flot"><i className="fa fa-circle-o" /> Flot</a></li>
-                                <li><a href="/pages/charts/inline"><i className="fa fa-circle-o" /> Inline charts</a></li>
+                                <li className={this.activeClass("/pages/charts/chartjs")} onClick={(e) => { this.activeMenu("/pages/charts/chartjs") }}><Link to="/pages/charts/chartjs"><i className="fa fa-circle-o" /> ChartJS</Link></li>
+                                <li className={this.activeClass("/pages/charts/morris")} onClick={(e) => { this.activeMenu("/pages/charts/morris") }}><Link to="/pages/charts/morris"><i className="fa fa-circle-o" /> Morris</Link></li>
+                                <li className={this.activeClass("/pages/charts/flot")} onClick={(e) => { this.activeMenu("/pages/charts/flot") }}><Link to="/pages/charts/flot"><i className="fa fa-circle-o" /> Flot</Link></li>
+                                <li className={this.activeClass("/pages/charts/inline")} onClick={(e) => { this.activeMenu("/pages/charts/inline") }}><Link to="/pages/charts/inline"><i className="fa fa-circle-o" /> Inline charts</Link></li>
                             </ul>
                         </li>
                         <li className="treeview">
